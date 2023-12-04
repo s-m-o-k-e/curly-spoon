@@ -8,6 +8,14 @@ const outputPre = document.getElementById("output");
 
 // Add a click event listener to the "Run" button
 runButton.addEventListener("click", () => {
+    function hashCode(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    let char = str.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+  }
+  return hash;
+}
     // Get the code from the textarea
     const code = (codeTextarea.value).replace(/[^+\-<>,.\[\]]/g, '');
     function runBrainfuck(code) {
@@ -54,6 +62,7 @@ runButton.addEventListener("click", () => {
                 break;
             case ",":
                 // You can implement input handling here
+                memory[pointer]= hashCode(prompt(""))
                 break;
             case ".":
                 output += String.fromCharCode(memory[pointer]);
