@@ -62,7 +62,7 @@ runButton.addEventListener("click", () => {
                 break;
             case ",":
                 // You can implement input handling here
-                memory[pointer]= hashCode(prompt(""))
+                memory[pointer]= hashCode(prompt(""));
                 break;
             case ".":
                 output += String.fromCharCode(memory[pointer]);
